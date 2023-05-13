@@ -1,0 +1,38 @@
+<div class="card" *ngIf="!isEditUser">
+    <div class="card-header" style="background-color: seashell;">
+        <b>Create User</b>
+    </div>
+    <div class="card-body">
+
+
+
+
+
+
+        
+    </div>
+</div>
+
+
+
+<div class="card" *ngIf="isEditUser">
+    <div class="card-header" style="background-color: aquamarine;">
+        <b>Edit User</b>
+    </div>
+    <div class="card-body">
+        <label>FirstName : {{editUserData.FirstName}}</label>
+        <br />
+        <label>LastName : {{editUserData.LastName}}</label>
+        <br />
+        <label>MobileNumber : {{editUserData.MobileNumber}}</label>
+        <br />
+        <label>Email : {{editUserData.Email}}</label>
+        <br />
+        <label>Address : {{editUserData.Address}}</label>
+        <br />
+        <label>Status : {{editUserData.IsActive}}</label>
+        <br />
+
+
+    </div>
+</div>

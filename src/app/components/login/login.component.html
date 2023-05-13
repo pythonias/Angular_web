@@ -1,0 +1,46 @@
+<div class="container vh-100" style="width: 500px;">
+    <div class="row justify-content-center h-100">
+        <div class="card my-auto shadow">
+            <div class="card-body px-5">
+                <div class="text-center">
+                    <h2>Welcome</h2>
+                    <small>Please Enter your login credentials</small>
+                </div>
+                <br />
+
+
+                <form (ngSubmit)="onSubmit()" name="form" #loginForm="ngForm">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" #email="ngModel"
+                            name="email" [(ngModel)]="model.email" required email>
+                    </div>
+                    <div>
+                        <span *ngIf="email.invalid && email.touched" class="error">Email is Required.</span>
+                    </div>
+
+
+                    <br />
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password"
+                          #password="ngModel"  [(ngModel)]="model.password" required>
+                    </div>
+                    <div>
+                        <span *ngIf="password.invalid && password.touched" class="error">Password is Required.</span>
+                    </div>
+                    <br />
+
+                    <button class="btn btn-primary w-100" type="submit" [disabled]="!loginForm.valid">Login</button>
+                </form>
+
+
+
+            </div>
+            <div class="card-footer text-center">
+                <a routerLink="../forgot-password">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</div>

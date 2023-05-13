@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-header" style="background-color: aquamarine;">
+    <b>USER LIST</b>
+  </div>
+  <div class="card-body">
+
+
+    <div *ngIf="error!=''" class="alert alert-danger" role="alert">
+      <strong>{{error}}</strong>
+      <button type="button" class="btn-close" (click)="onCloseAlert()"></button>
+    </div>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <td scope="col">User ID</td>
+          <td scope="col">Name</td>
+          <td scope="col">Mobile</td>
+          <td scope="col">Address</td>
+          <td scope="col">State</td>
+          <td scope="col">Pincode</td>
+          <td scope="col">Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{user.UserId}}</td>
+          <td>{{user.FirstName}} {{user.LastName}}</td>
+          <td>{{user.MobileNumber}}</td>
+          <td>{{user.Address}}</td>
+          <td>{{user.State}}</td>
+          <td>{{user.Pincode}}</td>
+          <td><button class="btn btn-primary" style="cursor: pointer;" (click)="onEditUser(user);">Edit</button></td>
+
+        </tr>
+      </tbody>
+
+    </table>
+
+
+
+  </div>
+
+
+
+</div>
